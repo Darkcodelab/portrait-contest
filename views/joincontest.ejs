@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GreenBirdArtworks | Join Contest</title>
+    <%- include("./partials/head.ejs") %>
+  </head>
+  <style>
+    header a {
+      color: black !important;
+    }
+  </style>
+  <body>
+    <header><%- include("./partials/header.ejs") %></header>
+    <div class="container">
+      <div class="subheading">
+        <h2>
+          Enter the Following details to join the contest to win and get your or
+          your friends portrait done for free.
+        </h2>
+      </div>
+      <main class="joincontest-container">
+        <div class="img-container contest-img">
+          <img src="/profile.svg" alt="Profile" />
+        </div>
+        <form action="/joincontest" method="POST">
+          <p style="color: red; font-size: 15px"><%=message%></p>
+          <div class="formgroup">
+            <label for="name">Name: <sup>*</sup> </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              placeholder="John Doe"
+            />
+          </div>
+          <div class="formgroup">
+            <label for="handle">Instagram Handle: <sup>*</sup> </label>
+            <input
+              type="text"
+              name="handle"
+              id="handle"
+              required
+              placeholder="greenbirdartworks"
+            />
+          </div>
+          <input type="submit" value="Register" />
+        </form>
+      </main>
+    </div>
+  </body>
+</html>

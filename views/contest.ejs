@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <%- include("./partials/head.ejs") %>
+  </head>
+  <style>
+    header a {
+      color: black !important;
+    }
+  </style>
+  <body>
+    <header><%- include("./partials/header.ejs") %></header>
+
+    <div class="container contest-container">
+      <h1>List of Registerd Users. One will be picked randomly</h1>
+      <main class="contest-main-container">
+        <% users.forEach(e => { %>
+        <div class="user-div">
+          <div class="user-name"><%= e.name %></div>
+          <div class="user-handle">@<%= e.instagramHandle %></div>
+        </div>
+        <% }) %>
+      </main>
+    </div>
+  </body>
+</html>
